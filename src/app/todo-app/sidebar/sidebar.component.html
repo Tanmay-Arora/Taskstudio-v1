@@ -1,0 +1,61 @@
+<div class="offcanvas show offcanvas-start bg-slate text-white" data-bs-scroll="true" data-bs-backdrop="false"
+    tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel"></h5>
+
+    </div>
+    <div class="offcanvas-body">
+        <div class="container-fluid w-100 h-100">
+            <ul class="nav flex-column nav-pills ">
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLinkActive='' aria-current="page" href="#"><i
+                            class="fa fa-inbox fa-lg text-primary pe-3 align-middle"></i><span
+                            class="sidebar-items align-middle">My Tasks</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="../home" routerLinkActive="active" href="#"><i
+                            class="fa fa-calendar fa-lg text-success pe-3 align-middle"></i><span
+                            class="sidebar-items align-middle">Today</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#"><i
+                            class="fa fa-tasks fa-lg text-violet pe-3 align-middle"></i><span
+                            class="sidebar-items align-middle">Upcoming</span></a>
+                </li>
+                <li class="nav-item mt-4">
+                    <a class="nav-link text-white " data-bs-toggle="collapse" href="#projectCollapse" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-angle-right pe-3 btn-toggle"></i><span class="sidebar-items">Projects</span>
+                    </a>
+                    <ul class="collapse" id="projectCollapse" >
+                        <li>Item 1</li>
+                        <li class="nav-item">Add Project<button class="btn add-project-btn text-white ps-2" type="button"><i class="fa fa-plus"></i></button></li>
+                        <li>Item 1</li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white " data-bs-toggle="collapse" href="#labelsCollapse" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-angle-right pe-3 btn-toggle"></i><span class="sidebar-items">Labels</span>
+                    </a>
+                    <ul class="collapse" id="labelsCollapse">
+                        <li>Item 1</li>
+                        <li>Item 1</li>
+                        <li>Item 1</li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white " data-bs-toggle="collapse" href="#filtersCollapse" role="button"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        <i class="fa fa-angle-right pe-3 btn-toggle"></i><span class="sidebar-items">Filters</span>
+                    </a>
+                    <ul class="collapse" id="filtersCollapse">
+                        <li>Item 1</li>
+                        <li>Item 1</li>
+                        <li>Item 1</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

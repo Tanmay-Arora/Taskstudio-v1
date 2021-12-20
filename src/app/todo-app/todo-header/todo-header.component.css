@@ -1,0 +1,38 @@
+.app-header-wrapper{
+    width: 100%;
+    z-index: 0;
+}
+
+.bg-slate{
+    background-color: #363636;
+}
+
+.home-btn, .profile-btn{
+    margin-bottom: 2px;
+}
+
+.fa-home, .fa-plus, .fa-pie-chart{
+    color: rgb(158, 156, 156);
+}
+
+.fa-user-circle{
+    color: white;
+}
+
+.btn:focus,
+.btn:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn{
+    padding: 0.0175rem ;
+}
+
+.shadow-nav {
+    box-shadow: 0px 0px 3px;
+}
+
+
+    

@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "emailAddr": "abc@gmail.com",
+      "password": "12345678",
+      "secQuestion": "What is the maiden name of your mother?",
+      "secAnswer": "Chawla"
+    },
+    {
+      "id": 2,
+      "emailAddr": "def@gmail.com",
+      "password": "123456789",
+      "secQuestion": "What is your favourite sport?",
+      "secAnswer": "Volleyball"
+    },
+    {
+      "id": 3,
+      "emailAddr": "tanmay.arora@mtxb2b.com",
+      "password": "12345678",
+      "secQuestion": "What is your favourite sport?",
+      "secAnswer": "Volleyball"
+    },
+    {
+      "id": 4,
+      "emailAddr": "gyan@gmail.com",
+      "password": "12345678",
+      "secQuestion": "What is your favourite sport?",
+      "secAnswer": "Cricket"
+    }
+  ]
+}

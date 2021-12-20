@@ -1,0 +1,52 @@
+.page-wrapper{
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.bg-slate{
+    background-color: #363636;
+}
+
+.bg-workarea {
+    background-color: #292929;
+}
+
+.size-h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.date-text {
+    font-size: 0.75rem;
+    font-weight: 200;
+}
+
+.view-button{
+    font-size: 1rem;
+    font-weight: 200;
+    border: none;
+    padding-top: 0rem;
+}
+
+.text-orange{
+    color: rgb(230, 98, 22);
+}
+
+.size-h4 {
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+.btn:focus,
+.btn:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-studio{
+    background-color: rgb(230, 98, 22);
+    color: white;
+    border-radius: 6px;
+}
+

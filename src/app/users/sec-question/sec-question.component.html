@@ -1,0 +1,36 @@
+<div class="secque-section h-100 d-flex align-items-center">
+    <div class="container">
+        <div class="row w-100">
+            <div class="col-4 offset-4 justify-content-center">
+                <div class="card signup-card  mt-5">
+                    <div class="card-body">
+                      <h4 class="card-title font-montserrat card-head">Account Security</h4>
+                      <p>Adding a security question-answer method will help us recover your account in case you forget your password.</p>
+                      <hr>
+                      <form [formGroup]="secqueForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label for="secQueInput" class="form-label">Choose Security Question<span class="text-danger">*</span></label><br>
+                            <select class="form-select" name="secQueInput" id="secQueInput" formControlName="secQuestion" [class.is-invalid]="secQuestion!.invalid && secQuestion!.touched">
+                                <option selected disabled hidden value="null">Choose a Security Question:</option>
+                                <option *ngFor="let ques of securityQues; index as i" [value]=ques>{{ques}}</option>
+                            </select>
+                            <small [class.d-none]="secQuestion!.valid || secQuestion!.untouched" class="text-danger">Selecting security question is required.</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="secAnsInput" class="form-label">Your Answer<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="secAnsInput" placeholder="Enter answer for the above security question" formControlName="secAnswer" [class.is-invalid]="secAnswer!.invalid && secAnswer!.touched">
+                            <small [class.d-none]="secAnswer!.valid || secAnswer!.untouched" class="text-danger">Answer for chosen security question is required.</small>
+                        </div>
+                        <button type="submit" [disabled] = 'secqueForm.invalid' class="btn btn-studio w-100 my-2"><b>Submit</b></button>                        
+                      </form>
+                      <hr class="my-3">
+                      <div class="mb-3">
+                        <p class="login-instead-text font-montserrat">Already signed up?<a class="text-studio no-link-decoration" routerLink="../login">&nbsp;Go to Login</a></p>
+                    </div>
+                    </div>
+                  </div>
+                  <!--{{secqueForm.value | json}}-->
+            </div>
+        </div>
+    </div>
+</div>

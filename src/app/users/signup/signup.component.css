@@ -1,0 +1,46 @@
+.signup-section{
+    background-color:antiquewhite;
+}
+
+.font-montserrat{
+    font-family: 'Montserrat', bold, sans-serif;
+}
+
+.btn-studio{
+    width: 122px;
+    background-color: rgb(230, 98, 22);
+    color: white;
+    border-radius: 6px;
+}
+
+.text-studio{
+    color: rgb(230, 98, 22);
+}
+
+.no-link-decoration{
+    text-decoration: none;
+}
+
+.shadow{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.signup-card{
+    border-radius: 15px;
+}
+
+.card-head{
+    font-weight: 1000;
+}
+
+.disclaimer-text{
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.login-instead-text{
+    font-size: 13px;
+    font-weight: 1000;
+    text-align: center;
+}

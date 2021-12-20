@@ -1,0 +1,62 @@
+<div class="page-wrapper pt-4 bg-workarea">
+    <div class="container-fluid w-100 h-100 mx-0 px-0">
+        <div class="row w-100 h-100">
+            <div class="col-3">
+                <app-sidebar></app-sidebar>
+            </div>
+            <div  id="content-section" class="col-7 offset-1 pt-5">
+                <div class="container-fluid w-100 pt-2">
+                    <div class="row w-100">
+                       <div class="col-3">
+                        <p class="text-light size-h5">Today<span class="text-muted date-text ps-2">{{todayDate | date:'EEE dd LLL'}}</span></p>
+                       </div>
+                       <div class="col-2 offset-7">
+                        <button class="btn text-muted view-button"><i class="fa fa-sliders pe-1"></i><span>View</span></button>
+                       </div>
+                    </div>
+                    <div class="row w-100">
+                        <div class="col-3">
+                         <button class=" btn text-light px-0" (click) = "addTaskForm()"><i class="fa fa-plus text-orange pe-2"></i><span class="size-h4 text-muted">Add Task</span></button>
+                        </div>
+                     </div>
+                     <div class="row w-100 mb-2" id="show-task" *ngFor = "let task of taskArray; index as i">
+                        <div class="col-12">
+                           <div class="card rounded bg-slate text-white">
+                               <div class="card-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="deleteRadio" (click)="deleteTask(task.id)" id="flexCheckDefault">
+                                </div>
+                                <div class="mb-3">
+                                    {{task.name}}
+                                </div>
+                                <hr>
+                                <div class="mb-3">
+                                    {{task.description}}
+                                </div>
+                               </div>
+                             </div>
+                        </div>
+                    </div>
+                     <div class="row w-100 mb-2" id="add-task" [ngClass] = "taskFormVisible === true ? ['d-block'] : ['d-none']">
+                         <div class="col-12">
+                            <div class="card rounded bg-slate text-white">
+                                <div class="card-body">
+                                    <form [formGroup] = "taskForm" (ngSubmit) = "onSubmit()">
+                                        <div class="mb-3">                                            
+                                            <input type="text" class="form-control bg-slate text-light" id="emailInput" placeholder="e.g, Design meeting at 11 AM" formControlName = 'name'>                                            
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control bg-slate text-light" id="passInput" placeholder="Task Description" formControlName = "description">
+                                        </div>
+                                        <button class="btn btn-studio me-3" type="submit" [disabled] = 'taskForm.invalid'>Add Task</button>
+                                        <button class="btn btn-dark" type="button" (click) = "removeTaskForm()">Cancel</button>
+                                    </form>
+                                </div>
+                              </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

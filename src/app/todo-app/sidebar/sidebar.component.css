@@ -1,0 +1,35 @@
+.offcanvas, .offcanvas-start{
+    z-index: 10;
+    width: 270px;
+}
+
+.offcanvas.show {
+    visibility: visible;
+}
+
+.bg-slate{
+    background-color: #363636;
+}
+
+.bg-workarea {
+    background-color: #292929;
+}
+
+.sidebar-items{
+    font-family: 'Roboto-Light', sans-serif;
+    font-size: 14px;   
+}
+
+.mytask-row {
+    background-color: #4b4b4b;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px #4b4b4b;
+}
+
+.text-violet{
+    color: #a970ff;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #4b4b4b;
+}

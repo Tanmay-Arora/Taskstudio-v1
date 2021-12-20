@@ -1,0 +1,76 @@
+
+<div class="signup-section h-100 d-flex align-items-center">
+    <div class="container">
+        <div class="row w-100">
+            <div class="col-4 offset-4 justify-content-center">
+                <div class="card signup-card shadow mt-5">
+                    <div class="card-body">
+                        <h4 class="card-title font-montserrat card-head">Signup</h4>
+                        <hr>
+                        <form [formGroup]="signupForm" (ngSubmit) = "onSubmit()" #formDir="ngForm" novalidate>
+                            <div class="mb-3">
+                                <label for="nameInput" class="form-label">Full Name<span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="nameInput" [class.is-invalid]="name!.invalid && name!.touched"
+                                    placeholder="Enter your full name" formControlName="name">
+                                <!--<small [class.d-none]="signupForm.get('emailAddr')!.valid || signupForm.get('emailAddr')!.untouched" class="text-danger">Email is required.</small>-->
+                                <div *ngIf="name!.invalid && name!.touched && formDir.submitted">
+                                    <small *ngIf="emailAddr?.hasError('required')" class="text-danger">Email is Required</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="emailInput" class="form-label">Email address<span
+                                        class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="emailInput" [class.is-invalid]="emailAddr!.invalid && emailAddr!.touched"
+                                    placeholder="Enter your email address" formControlName="emailAddr">
+                                <!--<small [class.d-none]="signupForm.get('emailAddr')!.valid || signupForm.get('emailAddr')!.untouched" class="text-danger">Email is required.</small>-->
+                                <div *ngIf="emailAddr!.invalid && emailAddr!.touched && formDir.submitted">
+                                    <small *ngIf="emailAddr?.hasError('required')" class="text-danger">Email is Required</small><br>
+                                    <small *ngIf="emailAddr?.hasError('email')"class="text-danger">Invalid Email Address</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="passInput" class="form-label">Password<span
+                                        class="text-danger">*</span></label>
+                                <input type="password" class="form-control" id="passInput" [class.is-invalid]="password!.invalid && password!.touched"
+                                    placeholder="Enter a strong password" formControlName="password">
+                                <!--<small [class.d-none]="signupForm.get('password')!.valid || signupForm.get('password')!.untouched" class="text-danger d-none">Password is required.</small>-->
+                                <div *ngIf="password!.invalid && password!.touched && formDir.submitted">
+                                    <small *ngIf="password?.hasError('required')" class="text-danger">Password is Required</small><br>
+                                    <small *ngIf="password?.hasError('minlength')"class="text-danger">Invalid Password(Must have at least 7 characters.)</small>
+                                    
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="rePassInput" class="form-label">Confirm Password<span
+                                        class="text-danger">*</span></label>
+                                <input type="password" class="form-control" id="rePassInput" [class.is-invalid]="(confirmPassword!.invalid && confirmPassword!.touched) || confirmPassword!.hasError('mismatch')"
+                                    placeholder="Please confirm your password" formControlName="confirmPassword">
+                                <!--<small [class.d-none]="signupForm.get('confirmPassword')!.valid || signupForm.get('confirmPassword')!.untouched" class="text-danger d-none">Please confirm your password.</small>-->
+                                <div *ngIf="confirmPassword!.touched && !(confirmPassword!.hasError('mismatch')) && formDir.submitted">
+                                    <small *ngIf="signupForm?.hasError('mismatch')" class="text-danger">Re-entered password does not match the password field.</small><br>
+                                    <small *ngIf="confirmPassword?.hasError('required')" class="text-danger">Confirming Password is Required</small><br>
+                                    <small *ngIf="confirmPassword?.hasError('minlength')"class="text-danger">Invalid Password(Must have at least 7 characters.)</small>            
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <p class="disclaimer-text font-montserrat">By continuing with your Email, you agree to
+                                    taskStudio's <a class="text-studio no-link-decoration">Terms of Service</a> and <a
+                                        class="text-studio no-link-decoration">Privacy Policy</a>.</p>
+                            </div>
+                            <button type="submit" class="btn w-100 btn-studio" [disabled] = '(signupForm.invalid && formDir.submitted)'
+                                ><b>Submit</b></button>
+                        </form>
+                        <hr class="my-3">
+                        <div class="mb-3">
+                            <p class="login-instead-text font-montserrat">Already signed up?<a
+                                    class="text-studio no-link-decoration" routerLink="../login">&nbsp;Go to Login</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--{{signupForm.value | json}}-->
+            </div>
+        </div>
+    </div>
+</div>
